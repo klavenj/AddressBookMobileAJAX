@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Address Book</title>
+
+	<!-- Bootstrap Framework -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	
+
+
+
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<!-- Animate Css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!-- Mobile JQuery -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+	<!-- Modals -->
+<div class="modal slideInDown" id="profile" tabindex="-1" role="dialog" aria-labelledby="ProfileCard">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<div class="modal-header header-custom">
+    		<button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	</div>
+	      <div class="modal-body">
+	       	<div class="card card-custom">			
+	       		<img class="card-img-top img-responsive" src="img/default-avatar.jpg">
+	       		<div class="card-block">
+				   <h3 class="card-title">
+				   		Klaven Jones
+				   </h3>
+				   <p class="card-text">
+				  		Fullstack Developer
+				   </p>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item"><span>Phone Number: </span> 555-555-5555</li>
+				    <li class="list-group-item"><span>Email: </span> Klaven@email.com</li>
+				  </ul>	
+				  <div class="btn-group">
+				  	<button type="button" data-dismiss="modal" data-toggle="modal" data-target="#EditContact" class="btn btn-primary btn-sm">Edit</button>
+				  	<button type="button" class="btn btn-primary btn-sm btn-delete">Delete</button>
+				  </div>
+	       	</div>	
+	      </div> 
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- add new modal -->
+<div class="modal slideInUp" id="addContact" tabindex="-1" role="dialog" aria-labelledby="addUser">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<div class="modal-header header-custom">
+    		<button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	</div>
+	      <div class="modal-body">
+	       	<div class="card card-custom">
+	       		<h3 class="card-title">Add New Contact</h3>			
+	       		<form>
+						<div class="form-group custom-form">
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="firstName" placeholder="First Name">
+							</div>
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="lastName" placeholder="Last Name">
+							</div>
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="jobTitle" placeholder="Job Title">
+							</div>
+							<div class="input-group">
+								<input type="email" class="form-control form-control-custom" id="email" placeholder="Email">
+							</div>
+							<div class="input-group">
+								<input type="tel" class="form-control form-control-custom" id="phoneNumber" placeholder="Phone">
+							</div>
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="website" placeholder="Website">
+							</div>
+							<div class="input-group">
+								
+								<button type="submit" data-dismiss="modal" class="btn btn-primary btn-lg btn-block btn-custom">Cancel</button>
+								<button type="submit" class="btn btn-primary btn-lg btn-block btn-custom">Save</button>	
+	
+
+							</div>
+
+						</div>	
+					</form>	 
+	       	</div>	
+	      </div> 
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- edit modal -->
+<div class="modal fadeIn" id="EditContact" tabindex="-1" role="dialog" aria-labelledby="EditUser">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<div class="modal-header header-custom">
+    		<button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	</div>
+	      <div class="modal-body">
+	       	<div class="card card-custom">
+	       		<h3 class="card-title">Edit Contact</h3>			
+	       		<form>
+						<div class="form-group custom-form">
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="firstName" placeholder="First Name">
+							</div>
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="lastName" placeholder="Last Name">
+							</div>
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="jobTitle" placeholder="Job Title">
+							</div>
+							<div class="input-group">
+								<input type="email" class="form-control form-control-custom" id="email" placeholder="Email">
+							</div>
+							<div class="input-group">
+								<input type="tel" class="form-control form-control-custom" id="phoneNumber" placeholder="Phone">
+							</div>
+							<div class="input-group">
+								<input type="text" class="form-control form-control-custom" id="website" placeholder="Website">
+							</div>
+							<div class="input-group">
+								
+								<button type="submit" data-dismiss="modal" class="btn btn-primary btn-lg btn-block btn-custom">Cancel</button>
+								<button type="submit" class="btn btn-primary btn-lg btn-block btn-custom">Save</button>	
+	
+
+							</div>
+
+						</div>	
+					</form>	 
+	       	</div>	
+	      </div> 
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+	<!-- navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		
+		<div class="container-fluid">
+			<div class="row">
+				
+				<div class="col-sm-8 offset-sm-2" role="search">
+			    	
+			    	 <div class="input-group input-group-custom">
+				   		 <input type="search" class="form-control custom-search" placeholder="Search" aria-describedby="basic-addon2">
+		 				 <span class="input-group-btn">
+	                        <button class="btn btn-info" type="button">
+	                            <i class="glyphicon glyphicon-search"></i>
+	                        </button>
+	                    </span>
+			    	</div>
+			    
+			    </div>
+		
+		  </div> <!-- Row end -->
+		
+		</div> <!-- Container end -->
+	
+	</nav> <!-- nav end -->
+	
+
+		<!-- Buttons -->
+
+    <!-- add new button -->
+	 
+	 <button data-toggle="modal" data-target="#addContact" id="addNew" title="Add New"><i class="glyphicon glyphicon-plus"></i></button>
+
+
+	 <!-- back to top button -->
+	 <button id="upTop" title="To the Top"><i class="glyphicon glyphicon-chevron-up"></i></button>
+
+
+
+
+
+
+
+
+		<section> 
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="title">Contact List</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel">
+						<!-- <div class="panel-heading">A</div> -->
+						<div class="panel-body">
+							<div class="list-group">
+							  <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile" >
+							   	<!-- <span class="badge badge-default badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge- default badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+
+							  	Klaven Jones
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span>
+							  	 -->
+							  	Brittani Smith
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+							  	Allen Walker Jr.
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+							  	Malik Ramsey
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+							 	Nyron McAllister
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+							  	Priscilla Twum
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+							  	Curtis Jones
+							  </a>
+							   <a href="#" class="list-group-item" data-toggle="modal" data-target="#profile">
+							  	<!-- <span class="badge badge-edit"><i class="fa fa-pencil"></i></span>
+							  	<span class="badge badge-delete"><i class="fa fa-times"></i></span> -->
+							  	
+							  	Jermaine Jones
+							  </a>
+
+						 </div>
+					 </div>	<!-- Panel body end -->
+				 	</div> <!-- Panel End -->
+				</div>
+			</div> <!-- row end 	 -->
+		</section> <!-- Section End -->
+
+
+
+
+
+	<!-- Scripts -->
+
+
+<!-- Jquery CDN -->
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://use.fontawesome.com/9e0507d25d.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="
+sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
+	
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+
+<!-- Custom JS -->
+<script src="js/app.js" type="text/javascript"></script>
+
+</body>
+</html>
